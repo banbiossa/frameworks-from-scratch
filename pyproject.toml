@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "frameworks-from-scratch"
+version = "0.1.0"
+description = ""
+authors = ["Shota Shimizu <shota.shimizu@quantumblack.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+jupyter = "*"
+jupyterlab = "^1.0.0"
+pandas = "*"
+scikit-learn = "*"
+numpy = "*"
+matplotlib = "*"
+seaborn = "*"
+flake8 = "^3.8.2"
+pylint = "^2.5.2"
+black = {version = "^19.10b0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
