@@ -1,6 +1,8 @@
 import numpy as np
 from .variable import Variable
+from .util import as_array
 import logging
+from typing import List
 
 logger = logging.getLogger(__name__)
 
@@ -8,26 +10,42 @@ logger = logging.getLogger(__name__)
 
 
 class Function:
-    def __call__(self, input_var: Variable) -> Variable:
-        x = input_var.data
-        y = self.forward(x)
-        output = Variable(y)
-        output.set_creator(self)
-        self.input = input_var
-        self.output = output
-        return output
+    def __call__(self, *inputs: Variable) -> List[Variable]:
+        xs = [x.data for x in inputs]
+        ys = self.forward(*xs)
+        if not isinstance(ys, tuple):
+            ys = (ys,)
+        outputs = [Variable(as_array(y)) for y in ys]
+        for output in outputs:
+            output.set_creator(self)
+        self.inputs = inputs
+        self.outputs = outputs
+        return outputs if len(outputs) > 1 else outputs[0]
 
-    def forward(self, x):
+    def forward(self, x0, x1):
         raise NotImplementedError()
 
     def backward(self, gy):
         raise NotImplementedError()
 
     def __repr__(self):
-        return f"{self.__class__.__name__}({self.input.__repr__()})"
+        return f"{self.__class__.__name__}({self.inputs.__repr__()})"
 
     def __str__(self):
-        return f"[{self.__repr__()} -> {self.output.__repr__()}]"
+        return f"[{self.__repr__()} -> {self.outputs.__repr__()}]"
+
+
+class Add(Function):
+    def forward(self, x0, x1):
+        y = x0 + x1
+        return y
+
+    def backward(self, gy):
+        return gy, gy
+
+
+def add(x0, x1):
+    return Add()(x0, x1)
 
 
 class Square(Function):
@@ -35,7 +53,7 @@ class Square(Function):
         return x ** 2
 
     def backward(self, gy):
-        x = self.input.data
+        x = self.inputs[0].data
         gx = 2 * x * gy
         logger.info(f"Backward called: {gx=:.2f} := 2 * {x=:.2f} * {gy=:.2f}")
         return gx

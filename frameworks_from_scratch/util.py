@@ -1,4 +1,5 @@
 from .variable import Variable
+import numpy as np
 
 
 def numerical_diff(f, x, eps=1e-4):
@@ -7,3 +8,9 @@ def numerical_diff(f, x, eps=1e-4):
     y0 = f(x0)
     y1 = f(x1)
     return (y1.data - y0.data) / (2 * eps)
+
+
+def as_array(x):
+    if np.isscalar(x):
+        return np.array(x)
+    return x
