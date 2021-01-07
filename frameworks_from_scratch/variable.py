@@ -16,9 +16,12 @@ class Variable:
         self.creator = func
 
     def backward(self):
-        f = self.creator
-        if f is not None:
+        funcs = [self.creator]
+        while funcs:
+            f = funcs.pop()
             logger.info(f"Gradient from {f} and {self}")
-            x = f.input
-            x.grad = f.backward(self.grad)
-            x.backward()
+            x, y = f.input, f.output
+            x.grad = f.backward(y.grad)
+
+            if x.creator is not None:
+                funcs.append(x.creator)

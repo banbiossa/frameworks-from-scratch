@@ -6,12 +6,12 @@ logger = logging.getLogger(__name__)
 
 
 class Function:
-    def __call__(self, input: Variable) -> Variable:
-        x = input.data
+    def __call__(self, input_var: Variable) -> Variable:
+        x = input_var.data
         y = self.forward(x)
         output = Variable(y)
         output.set_creator(self)
-        self.input = input
+        self.input = input_var
         self.output = output
         return output
 
