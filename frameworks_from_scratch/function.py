@@ -3,10 +3,10 @@ from .variable import Variable
 from .util import as_array
 import logging
 from typing import List
+import weakref
+from .config import Config
 
 logger = logging.getLogger(__name__)
-
-# __all__ = ["Function", "Square", "Exp", "function", "square"]
 
 
 class Function:
@@ -16,10 +16,15 @@ class Function:
         if not isinstance(ys, tuple):
             ys = (ys,)
         outputs = [Variable(as_array(y)) for y in ys]
-        for output in outputs:
-            output.set_creator(self)
-        self.inputs = inputs
-        self.outputs = outputs
+
+        if Config.enable_backprop:
+            self.generation = max([x.generation for x in inputs])
+            for output in outputs:
+                output.set_creator(self)
+
+            self.inputs = inputs
+            self.outputs = [weakref.ref(output) for output in outputs]
+
         return outputs if len(outputs) > 1 else outputs[0]
 
     def forward(self, x0, x1):
@@ -46,6 +51,20 @@ class Add(Function):
 
 def add(x0, x1):
     return Add()(x0, x1)
+
+
+class Mul(Function):
+    def forward(self, x0, x1):
+        y = x0 * x1
+        return y
+
+    def backward(self, gy):
+        x0, x1 = self.inputs[0].data, self.inputs[1].data
+        return gy * x1, gy * x0
+
+
+def mul(x0, x1):
+    return Mul()(x0, x1)
 
 
 class Square(Function):

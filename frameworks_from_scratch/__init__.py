@@ -9,4 +9,6 @@ from .variable import *
 # from .util import numerical_diff
 from .util import *
 
+from .config import *
+
 # __all__ = ["Function", "Square", "Exp", "Variable", "numerical_diff"]
