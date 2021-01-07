@@ -4,6 +4,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# __all__ = ["Function", "Square", "Exp", "function", "square"]
+
 
 class Function:
     def __call__(self, input_var: Variable) -> Variable:
@@ -39,6 +41,10 @@ class Square(Function):
         return gx
 
 
+def square(x):
+    return Square()(x)
+
+
 class Exp(Function):
     def forward(self, x):
         return np.exp(x)
@@ -47,4 +53,18 @@ class Exp(Function):
         x = self.input.data
         gx = np.exp(x) * gy
         logger.info(f"Backward called: {gx=:.2f} := {np.exp(x)=:.2f} * {gy=:.2f}")
+        return gx
+
+
+def exp(x):
+    return Exp()(x)
+
+
+class Log(Function):
+    def forward(self, x):
+        return np.log(x)
+
+    def backward(self, gy):
+        x = self.input.data
+        gx = gy / x
         return gx
