@@ -1,11 +1,13 @@
 import logging
 import numpy as np
-from .function import mul
+import frameworks_from_scratch  # to avoid circular import error
 
 logger = logging.getLogger(__name__)
 
 
 class Variable:
+    __array_priority__ = 200
+
     def __init__(self, data, name=None):
         if data is not None:
             if not isinstance(data, np.ndarray):
@@ -29,7 +31,34 @@ class Variable:
         return self.data.dtype
 
     def __mul__(self, other):
-        return mul(self, other)
+        return frameworks_from_scratch.mul(self, other)
+
+    def __rmul__(self, other):
+        return frameworks_from_scratch.mul(self, other)
+
+    def __add__(self, other):
+        return frameworks_from_scratch.add(self, other)
+
+    def __radd__(self, other):
+        return frameworks_from_scratch.add(self, other)
+
+    def __neg__(self):
+        return frameworks_from_scratch.neg(self)
+
+    def __sub__(self, other):
+        return frameworks_from_scratch.sub(self, other)
+
+    def __rsub__(self, other):
+        return frameworks_from_scratch.sub(other, self)
+
+    def __truediv__(self, other):
+        return frameworks_from_scratch.div(self, other)
+
+    def __pow__(self, power, modulo=None):
+        return frameworks_from_scratch.pow(self, power)
+
+    def __rtruediv__(self, other):
+        return frameworks_from_scratch.div(other, self)
 
     def __len__(self):
         return len(self.data)
