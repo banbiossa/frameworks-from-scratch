@@ -19,6 +19,7 @@ seaborn = "*"
 flake8 = "^3.8.2"
 pylint = "^2.5.2"
 black = {version = "^19.10b0", allow-prereleases = true}
+python-dotenv = '*'
 
 [build-system]
 requires = ["poetry>=0.12"]

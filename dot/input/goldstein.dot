@@ -1,0 +1,219 @@
+digraph g {
+5629777376 [label="z", color=orange, style=filled]
+5629777280 [label="Mul", color=lightblue, style=filled, shape=box]
+5629768512 -> 5629777280
+5629777184 -> 5629777280
+5629777280 -> 5629777376
+5629768512 [label="", color=orange, style=filled]
+5629777184 [label="", color=orange, style=filled]
+5629776992 [label="Add", color=lightblue, style=filled, shape=box]
+5629776896 -> 5629776992
+5629777088 -> 5629776992
+5629776992 -> 5629777184
+5629776896 [label="", color=orange, style=filled]
+5629777088 [label="", color=orange, style=filled]
+5629776800 [label="Mul", color=lightblue, style=filled, shape=box]
+5629769520 -> 5629776800
+5629776704 -> 5629776800
+5629776800 -> 5629776896
+5629769520 [label="", color=orange, style=filled]
+5629776704 [label="", color=orange, style=filled]
+5629776608 [label="Add", color=lightblue, style=filled, shape=box]
+5629776032 -> 5629776608
+5629776512 -> 5629776608
+5629776608 -> 5629776704
+5629776032 [label="", color=orange, style=filled]
+5629776512 [label="", color=orange, style=filled]
+5629776224 [label="Mul", color=lightblue, style=filled, shape=box]
+5629776272 -> 5629776224
+5629776416 -> 5629776224
+5629776224 -> 5629776512
+5629776272 [label="", color=orange, style=filled]
+5629776416 [label="", color=orange, style=filled]
+5629776128 [label="Pow", color=lightblue, style=filled, shape=box]
+5629604816 -> 5629776128
+5629776128 -> 5629776272
+5629604816 [label="y", color=orange, style=filled]
+5629775936 [label="Sub", color=lightblue, style=filled, shape=box]
+5629771200 -> 5629775936
+5629771680 -> 5629775936
+5629775936 -> 5629776032
+5629771200 [label="", color=orange, style=filled]
+5629771680 [label="", color=orange, style=filled]
+5629771584 [label="Mul", color=lightblue, style=filled, shape=box]
+5629771488 -> 5629771584
+5629604816 -> 5629771584
+5629771584 -> 5629771680
+5629771488 [label="", color=orange, style=filled]
+5629604816 [label="y", color=orange, style=filled]
+5629771296 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629771296
+5629771392 -> 5629771296
+5629771296 -> 5629771488
+5629604672 [label="x", color=orange, style=filled]
+5629771392 [label="", color=orange, style=filled]
+5629771104 [label="Add", color=lightblue, style=filled, shape=box]
+5629770720 -> 5629771104
+5629771008 -> 5629771104
+5629771104 -> 5629771200
+5629770720 [label="", color=orange, style=filled]
+5629771008 [label="", color=orange, style=filled]
+5629770816 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604816 -> 5629770816
+5629770912 -> 5629770816
+5629770816 -> 5629771008
+5629604816 [label="y", color=orange, style=filled]
+5629770912 [label="", color=orange, style=filled]
+5629770624 [label="Add", color=lightblue, style=filled, shape=box]
+5629770048 -> 5629770624
+5629770528 -> 5629770624
+5629770624 -> 5629770720
+5629770048 [label="", color=orange, style=filled]
+5629770528 [label="", color=orange, style=filled]
+5629770240 [label="Mul", color=lightblue, style=filled, shape=box]
+5629770288 -> 5629770240
+5629770432 -> 5629770240
+5629770240 -> 5629770528
+5629770288 [label="", color=orange, style=filled]
+5629770432 [label="", color=orange, style=filled]
+5629770144 [label="Pow", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629770144
+5629770144 -> 5629770288
+5629604672 [label="x", color=orange, style=filled]
+5629769856 [label="Sub", color=lightblue, style=filled, shape=box]
+5629769952 -> 5629769856
+5629769760 -> 5629769856
+5629769856 -> 5629770048
+5629769952 [label="", color=orange, style=filled]
+5629769760 [label="", color=orange, style=filled]
+5629769472 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629769472
+5629769664 -> 5629769472
+5629769472 -> 5629769760
+5629604672 [label="x", color=orange, style=filled]
+5629769664 [label="", color=orange, style=filled]
+5629769376 [label="Pow", color=lightblue, style=filled, shape=box]
+5629769280 -> 5629769376
+5629769376 -> 5629769520
+5629769280 [label="", color=orange, style=filled]
+5629769184 [label="Sub", color=lightblue, style=filled, shape=box]
+5629768800 -> 5629769184
+5629769088 -> 5629769184
+5629769184 -> 5629769280
+5629768800 [label="", color=orange, style=filled]
+5629769088 [label="", color=orange, style=filled]
+5629768896 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604816 -> 5629768896
+5629768992 -> 5629768896
+5629768896 -> 5629769088
+5629604816 [label="y", color=orange, style=filled]
+5629768992 [label="", color=orange, style=filled]
+5629768608 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629768608
+5629768704 -> 5629768608
+5629768608 -> 5629768800
+5629604672 [label="x", color=orange, style=filled]
+5629768704 [label="", color=orange, style=filled]
+5629768320 [label="Add", color=lightblue, style=filled, shape=box]
+5629768224 -> 5629768320
+5629768416 -> 5629768320
+5629768320 -> 5629768512
+5629768224 [label="", color=orange, style=filled]
+5629768416 [label="", color=orange, style=filled]
+5629768128 [label="Mul", color=lightblue, style=filled, shape=box]
+5629605248 -> 5629768128
+5629768032 -> 5629768128
+5629768128 -> 5629768224
+5629605248 [label="", color=orange, style=filled]
+5629768032 [label="", color=orange, style=filled]
+5629767936 [label="Add", color=lightblue, style=filled, shape=box]
+5629607744 -> 5629767936
+5629767840 -> 5629767936
+5629767936 -> 5629768032
+5629607744 [label="", color=orange, style=filled]
+5629767840 [label="", color=orange, style=filled]
+5629607216 [label="Mul", color=lightblue, style=filled, shape=box]
+5629606352 -> 5629607216
+5629767744 -> 5629607216
+5629607216 -> 5629767840
+5629606352 [label="", color=orange, style=filled]
+5629767744 [label="", color=orange, style=filled]
+5629607840 [label="Pow", color=lightblue, style=filled, shape=box]
+5629604816 -> 5629607840
+5629607840 -> 5629606352
+5629604816 [label="y", color=orange, style=filled]
+5629607648 [label="Add", color=lightblue, style=filled, shape=box]
+5629607072 -> 5629607648
+5629607552 -> 5629607648
+5629607648 -> 5629607744
+5629607072 [label="", color=orange, style=filled]
+5629607552 [label="", color=orange, style=filled]
+5629607456 [label="Mul", color=lightblue, style=filled, shape=box]
+5629607408 -> 5629607456
+5629604816 -> 5629607456
+5629607456 -> 5629607552
+5629607408 [label="", color=orange, style=filled]
+5629604816 [label="y", color=orange, style=filled]
+5629606448 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629606448
+5629607312 -> 5629606448
+5629606448 -> 5629607408
+5629604672 [label="x", color=orange, style=filled]
+5629607312 [label="", color=orange, style=filled]
+5629606976 [label="Sub", color=lightblue, style=filled, shape=box]
+5629606496 -> 5629606976
+5629606880 -> 5629606976
+5629606976 -> 5629607072
+5629606496 [label="", color=orange, style=filled]
+5629606880 [label="", color=orange, style=filled]
+5629606640 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604816 -> 5629606640
+5629606784 -> 5629606640
+5629606640 -> 5629606880
+5629604816 [label="y", color=orange, style=filled]
+5629606784 [label="", color=orange, style=filled]
+5629606304 [label="Add", color=lightblue, style=filled, shape=box]
+5629605728 -> 5629606304
+5629606208 -> 5629606304
+5629606304 -> 5629606496
+5629605728 [label="", color=orange, style=filled]
+5629606208 [label="", color=orange, style=filled]
+5629605920 [label="Mul", color=lightblue, style=filled, shape=box]
+5629605968 -> 5629605920
+5629606064 -> 5629605920
+5629605920 -> 5629606208
+5629605968 [label="", color=orange, style=filled]
+5629606064 [label="", color=orange, style=filled]
+5629605824 [label="Pow", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629605824
+5629605824 -> 5629605968
+5629604672 [label="x", color=orange, style=filled]
+5629605488 [label="Sub", color=lightblue, style=filled, shape=box]
+5629605680 -> 5629605488
+5629605440 -> 5629605488
+5629605488 -> 5629605728
+5629605680 [label="", color=orange, style=filled]
+5629605440 [label="", color=orange, style=filled]
+5629605200 [label="Mul", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629605200
+5629605392 -> 5629605200
+5629605200 -> 5629605440
+5629604672 [label="x", color=orange, style=filled]
+5629605392 [label="", color=orange, style=filled]
+5629605104 [label="Pow", color=lightblue, style=filled, shape=box]
+5629605008 -> 5629605104
+5629605104 -> 5629605248
+5629605008 [label="", color=orange, style=filled]
+5629604384 [label="Add", color=lightblue, style=filled, shape=box]
+5629604960 -> 5629604384
+5629604144 -> 5629604384
+5629604384 -> 5629605008
+5629604960 [label="", color=orange, style=filled]
+5629604144 [label="", color=orange, style=filled]
+5629549776 [label="Add", color=lightblue, style=filled, shape=box]
+5629604672 -> 5629549776
+5629604816 -> 5629549776
+5629549776 -> 5629604960
+5629604672 [label="x", color=orange, style=filled]
+5629604816 [label="y", color=orange, style=filled]
+}
