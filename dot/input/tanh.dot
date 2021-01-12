@@ -1,0 +1,23 @@
+digraph g {
+5676723648 [label="gx1", color=orange, style=filled]
+5508204816 [label="Mul", color=lightblue, style=filled, shape=box]
+5508204144 -> 5508204816
+5508204912 -> 5508204816
+5508204816 -> 5676723648
+5508204144 [label="", color=orange, style=filled]
+5508204912 [label="", color=orange, style=filled]
+5508204624 [label="Sub", color=lightblue, style=filled, shape=box]
+5508204528 -> 5508204624
+5508205872 -> 5508204624
+5508204624 -> 5508204912
+5508204528 [label="", color=orange, style=filled]
+5508205872 [label="", color=orange, style=filled]
+5508205200 [label="Pow", color=lightblue, style=filled, shape=box]
+5508205584 -> 5508205200
+5508205200 -> 5508205872
+5508205584 [label="y", color=orange, style=filled]
+5508205344 [label="Tanh", color=lightblue, style=filled, shape=box]
+5508205440 -> 5508205344
+5508205344 -> 5508205584
+5508205440 [label="x", color=orange, style=filled]
+}
