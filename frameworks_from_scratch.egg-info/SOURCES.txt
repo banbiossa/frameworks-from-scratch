@@ -1,7 +1,0 @@
-README.rst
-setup.py
-frameworks_from_scratch/__init__.py
-frameworks_from_scratch.egg-info/PKG-INFO
-frameworks_from_scratch.egg-info/SOURCES.txt
-frameworks_from_scratch.egg-info/dependency_links.txt
-frameworks_from_scratch.egg-info/top_level.txt
