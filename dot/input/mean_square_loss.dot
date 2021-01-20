@@ -1,0 +1,35 @@
+digraph g {
+4599991312 [label="() float64", color=orange, style=filled]
+4599991792 [label="Div", color=lightblue, style=filled, shape=box]
+4599990688 -> 4599991792
+4599991888 -> 4599991792
+4599991792 -> 4599991312
+4599990688 [label="() float64", color=orange, style=filled]
+4599991888 [label="() int64", color=orange, style=filled]
+4599992272 [label="Sum", color=lightblue, style=filled, shape=box]
+4599991600 -> 4599992272
+4599992272 -> 4599990688
+4599991600 [label="(100, 1) float64", color=orange, style=filled]
+4599988960 [label="Pow", color=lightblue, style=filled, shape=box]
+4599989920 -> 4599988960
+4599988960 -> 4599991600
+4599989920 [label="(100, 1) float64", color=orange, style=filled]
+4599989584 [label="Sub", color=lightblue, style=filled, shape=box]
+4599309840 -> 4599989584
+4599990832 -> 4599989584
+4599989584 -> 4599989920
+4599309840 [label="(100, 1) float64", color=orange, style=filled]
+4599990832 [label="(100, 1) float64", color=orange, style=filled]
+4599990544 [label="Add", color=lightblue, style=filled, shape=box]
+4599991696 -> 4599990544
+4586737824 -> 4599990544
+4599990544 -> 4599990832
+4599991696 [label="(100, 1) float64", color=orange, style=filled]
+4586737824 [label="(1,) float64", color=orange, style=filled]
+4599988912 [label="MatMul", color=lightblue, style=filled, shape=box]
+4599841744 -> 4599988912
+4599899856 -> 4599988912
+4599988912 -> 4599991696
+4599841744 [label="(100, 1) float64", color=orange, style=filled]
+4599899856 [label="(1, 1) float64", color=orange, style=filled]
+}

@@ -1,0 +1,21 @@
+digraph g {
+5543652128 [label="() float64", color=orange, style=filled]
+5543652320 [label="MeanSquaredError", color=lightblue, style=filled, shape=box]
+4444891408 -> 5543652320
+5543652224 -> 5543652320
+5543652320 -> 5543652128
+4444891408 [label="(100, 1) float64", color=orange, style=filled]
+5543652224 [label="(100, 1) float64", color=orange, style=filled]
+5543652416 [label="Add", color=lightblue, style=filled, shape=box]
+5543651552 -> 5543652416
+5543499616 -> 5543652416
+5543652416 -> 5543652224
+5543651552 [label="(100, 1) float64", color=orange, style=filled]
+5543499616 [label="(1,) float64", color=orange, style=filled]
+5543665136 [label="MatMul", color=lightblue, style=filled, shape=box]
+5543457648 -> 5543665136
+5543499520 -> 5543665136
+5543665136 -> 5543651552
+5543457648 [label="(100, 1) float64", color=orange, style=filled]
+5543499520 [label="(1, 1) float64", color=orange, style=filled]
+}

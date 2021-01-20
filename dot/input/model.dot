@@ -1,0 +1,23 @@
+digraph g {
+4586124192 [label="(5, 10) float64", color=orange, style=filled]
+4586124048 [label="Linear", color=lightblue, style=filled, shape=box]
+4586123904 -> 4586124048
+4586123328 -> 4586124048
+4586123664 -> 4586124048
+4586124048 -> 4586124192
+4586123904 [label="(5, 100) float64", color=orange, style=filled]
+4586123328 [label="W: (100, 10) float32", color=orange, style=filled]
+4586123664 [label="b: (10,) float32", color=orange, style=filled]
+4586126016 [label="Sigmoid", color=lightblue, style=filled, shape=box]
+4586041296 -> 4586126016
+4586126016 -> 4586123904
+4586041296 [label="(5, 100) float64", color=orange, style=filled]
+4586039280 [label="Linear", color=lightblue, style=filled, shape=box]
+4586038800 -> 4586039280
+4586037984 -> 4586039280
+4586123472 -> 4586039280
+4586039280 -> 4586041296
+4586038800 [label="x: (5, 10) float64", color=orange, style=filled]
+4586037984 [label="W: (10, 100) float32", color=orange, style=filled]
+4586123472 [label="b: (100,) float32", color=orange, style=filled]
+}
