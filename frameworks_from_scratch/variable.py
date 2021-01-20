@@ -64,6 +64,9 @@ class Variable:
     def __len__(self):
         return len(self.data)
 
+    def __getitem__(self, item):
+        return frameworks_from_scratch.get_item(self, item)
+
     def __repr__(self):
         if self.data is None:
             return "Variable(None)"
@@ -130,3 +133,7 @@ class Variable:
             if not retrain_grad:
                 for y in f.outputs:
                     y().grad = None  # y is a weakref
+
+
+class Parameter(Variable):
+    pass

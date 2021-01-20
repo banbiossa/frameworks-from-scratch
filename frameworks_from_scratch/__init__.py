@@ -11,4 +11,10 @@ from .util import *
 
 from .config import *
 
+from .layer import *
+
+from .optimizer import *
+
+from .datasets import *
+
 # __all__ = ["Function", "Square", "Exp", "Variable", "numerical_diff"]

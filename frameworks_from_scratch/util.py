@@ -5,6 +5,7 @@ import numpy as np
 from dotenv import find_dotenv
 from pathlib import Path
 import math
+import matplotlib.pyplot as plt
 
 
 def numerical_diff(f, x, eps=1e-4):
@@ -25,6 +26,27 @@ def as_variable(obj):
     if isinstance(obj, Variable):
         return obj
     return Variable(obj)
+
+
+def sum_to(x, shape):
+    """Sum elements along axes to output an array of a given shape.
+
+    Args:
+    x(ndarray): Input
+    shape:
+
+    Returns:
+        ndarray: output array of shape
+    """
+    ndim = len(shape)
+    lead = x.ndim - ndim
+    lead_axis = tuple(range(lead))
+
+    axis = tuple([i + lead for i, sx in enumerate(shape) if sx == 1])
+    y = x.sum(lead_axis + axis, keepdims=True)
+    if lead > 0:
+        y = y.squeeze(lead_axis)
+    return y
 
 
 def reshape_sum_backward(gy, x_shape, axis, keepdims):
@@ -124,6 +146,9 @@ def plot_dot_graph(output, verbose=True, to_file="graph.png"):
     cmd = "dot {} -T {} -o {}".format(graph_path, extension, output_path)
     subprocess.run(cmd, shell=True)
 
+    image = plt.imread(output_path)
+    return plt.imshow(image)
+
 
 def goldstein(x, y):
     z = (
@@ -152,3 +177,13 @@ def taylor_sin(x, threshold=1e-4):
 
 def rosenbrock(x0, x1):
     return 100 * (x1 - x0 ** 2) ** 2 + (x0 - 1) ** 2
+
+
+def logsumexp(x, axis=1):
+    m = x.max(axis=axis, keepdims=True)
+    y = x - m
+    np.exp(y, out=y)
+    s = y.sum(axis=axis, keepdims=True)
+    np.log(s, out=s)
+    m += s
+    return m
